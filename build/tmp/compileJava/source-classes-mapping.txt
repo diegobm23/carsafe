@@ -1,0 +1,24 @@
+com/carsafe/CarsafeApplication.java
+ com.carsafe.CarsafeApplication
+com/carsafe/entities/Cliente.java
+ com.carsafe.entities.Cliente
+com/carsafe/ServletInitializer.java
+ com.carsafe.ServletInitializer
+com/carsafe/DTO/ErroDTO.java
+ com.carsafe.DTO.ErroDTO
+com/carsafe/utils/ValidarCPF.java
+ com.carsafe.utils.ValidarCPF
+com/carsafe/repositories/ClienteRepository.java
+ com.carsafe.repositories.ClienteRepository
+com/carsafe/Service/ClienteService.java
+ com.carsafe.Service.ClienteService
+com/carsafe/controllers/ClienteController.java
+ com.carsafe.controllers.ClienteController
+com/carsafe/entities/Apolice.java
+ com.carsafe.entities.Apolice
+com/carsafe/repositories/ApoliceRepository.java
+ com.carsafe.repositories.ApoliceRepository
+com/carsafe/Service/ApoliceService.java
+ com.carsafe.Service.ApoliceService
+com/carsafe/controllers/ApoliceController.java
+ com.carsafe.controllers.ApoliceController

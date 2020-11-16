@@ -1,10 +1,14 @@
 package com.carsafe.service;
 
+import com.carsafe.dto.ApoliceStatusDTO;
 import com.carsafe.entities.Apolice;
 import com.carsafe.repositories.ApoliceRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -68,5 +72,42 @@ public class ApoliceService {
         }
 
         return null;
+    }
+
+    private String verificarStatus(Apolice apolice) {
+        String status = "";
+
+        if (LocalDate.now().compareTo(apolice.getFinalVigencia()) == 0) {
+            status = "VIGENTE (Mas sua apólice vence hoje)";
+        }
+
+        if (LocalDate.now().compareTo(apolice.getFinalVigencia()) > 0) {
+            long dias = apolice.getFinalVigencia().until(LocalDate.now(), ChronoUnit.DAYS);
+            status = "VENCIDA (já venceu à " + dias + " dias)";
+        }
+
+        if (LocalDate.now().compareTo(apolice.getFinalVigencia()) < 0) {
+            long dias = LocalDate.now().until(apolice.getFinalVigencia(), ChronoUnit.DAYS);
+            status = "VIGENTE (irá vencer daqui à " + dias + " dias)";
+        }
+
+        return status;
+    }
+
+    public List<ApoliceStatusDTO> consultarApolices(Integer numero) {
+        List<ApoliceStatusDTO> apolices = new ArrayList<>();
+
+        for (Apolice apolice : repository.findByNumero(numero)) {
+            ApoliceStatusDTO ap = new ApoliceStatusDTO();
+            ap.setId(apolice.getId());
+            ap.setNumero(apolice.getNumero());
+            ap.setPlaca(apolice.getPlaca());
+            ap.setValorSeguro(String.format("%,.2f", apolice.getValorSeguro()));
+            ap.setStatus(verificarStatus(apolice));
+
+            apolices.add(ap);
+        }
+
+        return apolices;
     }
 }

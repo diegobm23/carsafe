@@ -1,5 +1,6 @@
 package com.carsafe.controllers;
 
+import com.carsafe.dto.ApoliceStatusDTO;
 import com.carsafe.dto.ErroDTO;
 import com.carsafe.service.ApoliceService;
 import com.carsafe.entities.Apolice;
@@ -42,6 +43,11 @@ public class ApoliceController {
         } else {
             return repository.findAll();
         }
+    }
+
+    @GetMapping("/apolice/consultar")
+    public List<ApoliceStatusDTO> consultarApolice(@RequestParam Integer numero) {
+        return service.consultarApolices(numero);
     }
 
     @DeleteMapping("/apolice")

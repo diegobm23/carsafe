@@ -1,3 +1,3 @@
 # CarSafe
 
-Uma simples API Rest utilizando Spring Boot e Gradle para cadastrar e consultar clientes e apólices de seguros.
+Uma simples API Rest utilizando Spring Boot, Gradle e MongoDB para cadastrar e consultar clientes e apólices de seguros.

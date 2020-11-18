@@ -39,11 +39,11 @@ public class ClienteService {
     }
 
     private String validarCPF(String cpf) {
-        cpf = cpf.replace(".", "").replace("-", "");
-
         if (cpf == null || cpf.isEmpty())  {
             return "Informe o CPF do cliente.";
         }
+
+        cpf = cpf.replace(".", "").replace("-", "");
 
         if (!ValidarCPF.isCPF(cpf)) {
             return "CPF informado não é válido.";

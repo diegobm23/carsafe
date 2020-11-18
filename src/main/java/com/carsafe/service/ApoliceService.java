@@ -20,10 +20,10 @@ public class ApoliceService {
         this.repository = repository;
     }
 
-    private Integer getRandomNumber() {
+    private int getRandomNumber() {
         Random random = new Random();
-        Integer min = 10000;
-        Integer max = 99999;
+        int min = 10000;
+        int max = 99999;
 
         return random.ints(min, max).findFirst().getAsInt();
     }
@@ -50,7 +50,7 @@ public class ApoliceService {
         }
 
         if (apolice.getValorSeguro() == null) {
-            msg.append("Informe o valor do seguro");
+            msg.append("Informe o valor do seguro (valorSeguro).");
         }
 
         String mensagemVigencia = validarVigencias(apolice.getInicioVigencia(), apolice.getFinalVigencia());

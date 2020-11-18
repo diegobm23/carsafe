@@ -23,7 +23,7 @@ public class ClienteController {
     }
 
     @PostMapping("/cliente")
-    ResponseEntity<?> criarCliente(@RequestBody Cliente cliente) {
+    public ResponseEntity<?> criarCliente(@RequestBody Cliente cliente) {
         String mensagensErro = service.validarCliente(cliente);
 
         if (mensagensErro.isEmpty()) {
@@ -44,7 +44,7 @@ public class ClienteController {
     }
 
     @DeleteMapping("/cliente")
-    void deletar(@RequestParam String id) {
+    public void deletar(@RequestParam String id) {
         repository.deleteById(id);
     }
 }

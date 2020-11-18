@@ -24,8 +24,11 @@ public class ApoliceController {
     }
 
     @PostMapping("/apolice")
-    ResponseEntity<?> criarApolice(@RequestBody Apolice apolice) {
-        apolice.setNumero(service.gerarNumeroUnico());
+    public ResponseEntity<?> criarApolice(@RequestBody Apolice apolice) {
+        if (apolice.getId() == null) {
+            apolice.setNumero(service.gerarNumeroUnico());
+        }
+
         String mensagensErro = service.validarApolice(apolice);
 
         if (mensagensErro.isEmpty()) {
@@ -51,7 +54,7 @@ public class ApoliceController {
     }
 
     @DeleteMapping("/apolice")
-    void deletar(@RequestParam String id) {
+    public void deletar(@RequestParam String id) {
         repository.deleteById(id);
     }
 }

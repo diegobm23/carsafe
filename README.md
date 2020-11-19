@@ -25,11 +25,3 @@ Uma simples API Rest para cadastrar e consultar clientes e apólices de seguros.
 Na pasta /Teste Postman existem dois arquivos para serem importados no [Postman](https://www.postman.com/downloads/). Cada um desses arquivos é uma coleção de chamadas para todos os endpoints pedidos na descrição do teste (requisições POST, PUT, GET e DELETE).
 
 Sugiro começar pelas chamadas de POST, pois elas vão popular a base de dados para que as chamadas GET tenham dados para consultar.
-
-#### Observação
-
-Não desenvolvi frontend para esta API pois utilizei apenas um dia para desenvolver. Assumo total a responsabilidade por esta falha.
-Acredito que esta entrega irá esclarecer muito sobre meu estilo de código.
-
-Obrigado.
-Diego Moreira

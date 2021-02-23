@@ -5,7 +5,6 @@ Uma simples API Rest para cadastrar e consultar clientes e apólices de seguros.
 ### Tecnologias utilizadas
 
 - Spring Boot
-- Apache Tomcat
 - MongoDB
 - Gradle
 - IDE IntelliJ Community
